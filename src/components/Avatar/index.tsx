@@ -13,7 +13,6 @@ type AvatarProps = {
 export function Avatar({ urlImage }: AvatarProps) {
   const { secondary50, secondary70 } = theme.colors
 
-
   return (
     <LinearGradient
       style={styles.container}
