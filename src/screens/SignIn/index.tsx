@@ -1,12 +1,22 @@
 import React from 'react';
+
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+
 import { Image, View, Text } from 'react-native';
 
 import illustrationImg from '../../assets/illustration.png'
 import { ButtonIcon } from '../../components/ButtonIcon';
 
 import { styles } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 const SignIn: React.FC = () => {
+  const navigation = useNavigation()
+
+  function handleSignIn() {
+    navigation.navigate('Home')
+  }
+
   return (
     <View style={styles.container}>
       <Image source={illustrationImg} style={styles.image} resizeMode="stretch" />
@@ -18,7 +28,7 @@ const SignIn: React.FC = () => {
         <Text style={styles.subtitle}>
           Crie grupos para jogar seus games {`\n`} favoritos com seus amigos
         </Text>
-        <ButtonIcon title="Entrar com Discord" activeOpacity={0.7} />
+        <ButtonIcon onPress={handleSignIn} title="Entrar com Discord" />
       </View>
     </View>
   )
