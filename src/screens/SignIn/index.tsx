@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, Text, StatusBar } from 'react-native';
+import { Image, View, Text } from 'react-native';
 
 import illustrationImg from '../../assets/illustration.png'
 import { ButtonIcon } from '../../components/ButtonIcon';
@@ -9,12 +9,11 @@ import { styles } from './styles';
 const SignIn: React.FC = () => {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
       <Image source={illustrationImg} style={styles.image} resizeMode="stretch" />
 
       <View style={styles.content}>
         <Text style={styles.title}>
-          Organize {`\n`} suas jogatinas {`\n`} facilmente
+          Conecte-se {`\n`} e organize suas {`\n`} jogatinas
         </Text>
         <Text style={styles.subtitle}>
           Crie grupos para jogar seus games {`\n`} favoritos com seus amigos
