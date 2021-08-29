@@ -1,14 +1,15 @@
 import React from 'react';
 
-import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-
 import { Image, View, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 
 import illustrationImg from '../../assets/illustration.png'
+
+import { Background } from '../../components/Background';
 import { ButtonIcon } from '../../components/ButtonIcon';
 
 import { styles } from './styles';
-import { useNavigation } from '@react-navigation/native';
 
 const SignIn: React.FC = () => {
   const navigation = useNavigation()
@@ -18,19 +19,21 @@ const SignIn: React.FC = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <Image source={illustrationImg} style={styles.image} resizeMode="stretch" />
+    <Background>
+      <View style={styles.container}>
+        <Image source={illustrationImg} style={styles.image} resizeMode="stretch" />
 
-      <View style={styles.content}>
-        <Text style={styles.title}>
-          Conecte-se {`\n`} e organize suas {`\n`} jogatinas
-        </Text>
-        <Text style={styles.subtitle}>
-          Crie grupos para jogar seus games {`\n`} favoritos com seus amigos
-        </Text>
-        <ButtonIcon onPress={handleSignIn} title="Entrar com Discord" />
+        <View style={styles.content}>
+          <Text style={styles.title}>
+            Conecte-se {`\n`} e organize suas {`\n`} jogatinas
+          </Text>
+          <Text style={styles.subtitle}>
+            Crie grupos para jogar seus games {`\n`} favoritos com seus amigos
+          </Text>
+          <ButtonIcon onPress={handleSignIn} title="Entrar com Discord" />
+        </View>
       </View>
-    </View>
+    </Background>
   )
 }
 
